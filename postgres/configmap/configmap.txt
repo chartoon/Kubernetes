@@ -1,6 +1,16 @@
 ## Create configmap 
-kubectl create configmap postgres-secret --from-literal=postgres_user=postgres
-kubectl create configmap postgres-secret --from-literal=postgres_password=postgres
+#Pass two parameter
+#1. postgres_user=postgres 
+#2. postgres_password=postgres
+
+kubectl create configmap postgres-secret --from-literal=postgres_user=postgres --from-literal=postgres_password=postgres
 
 # Verify
 kubctl get configmap postgres-secret
+
+Got error:
+kubectl create -f pod/postgres.yaml 
+error: error validating "pod/postgres.yaml": error validating data: [ValidationError(Pod.spec.containers[0].env[0].valueFrom.configMapKeyRef): missing required field "key" in io.k8s.api.core.v1.ConfigMapKeySelector, ValidationError(Pod.spec.containers[0].env[0].valueFrom): unknown field "key" in io.k8s.api.core.v1.EnvVarSource, ValidationError(Pod.spec.containers[0].env[1].valueFrom.configMapKeyRef): missing required field "key" in io.k8s.api.core.v1.ConfigMapKeySelector, ValidationError(Pod.spec.containers[0].env[1].valueFrom): unknown field "key" in io.k8s.api.core.v1.EnvVarSource, ValidationError(Pod.spec.containers[0].volumeMounts[0]): missing required field "name" in io.k8s.api.core.v1.VolumeMount]; if you choose to ignore these errors, turn validation off with --validate=false
+
+
+Working on it.

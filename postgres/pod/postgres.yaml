@@ -8,23 +8,23 @@ spec:
     persistentVolumeClaim:
      claimName: pg-data-claim
   containers:
-   - name: postgres
-     image: postgres
-   ports:
+  - name: postgres
+    image: postgres
+    ports:
     - containerPort: 5432
     name: postgres
-   volumeMounts:
+    volumeMounts:
     - mountPath: "/var/lib/postgresql/data"
-      name: pgdata
-   env:
+    name: pgdata
+    env:
     - name: POSTGRES_USER
       valueFrom:
        configMapKeyRef:
         name: postgres-secret
-        key: postgres_user
+       key: postgres_user
     - name: POSTGRES_PASSWORD
       valueFrom:
        configMapKeyRef:
         name: postgres-secret
-        key: postgres_password
+       key: postgres_password
 
