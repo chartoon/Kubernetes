@@ -1,2 +1,6 @@
+## Create configmap 
 kubectl create configmap postgres-secret --from-literal=postgres_user=postgres
 kubectl create configmap postgres-secret --from-literal=postgres_password=postgres
+
+# Verify
+kubctl get configmap postgres-secret
