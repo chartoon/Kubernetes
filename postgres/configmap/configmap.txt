@@ -1,0 +1,2 @@
+kubectl create secret generic postgres-secret --from-literal="postgres_user=postgres"
+kubectl create secret generic postgres-secret --from-literal="postgres_password=postgres"
