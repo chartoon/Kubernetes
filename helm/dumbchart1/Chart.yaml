@@ -1,0 +1,14 @@
+Name: dumbchart1
+version: 0.0.1
+
+description: CM's first chart
+home: https://localhost/
+#sources: https://localhost/
+
+Maintainers:
+  - name: Charuhas Mehendale
+    email: charuhas.mehendale@xoriant.com
+engine: gotpl
+icon: https://avatars3.githubusercontent.com/u/32867482?s=400&v=4
+appVersion: v1
+deprecated: No
