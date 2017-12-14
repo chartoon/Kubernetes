@@ -3,14 +3,14 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: nginx
-  tag: stable
+  repository: mongo
+  tag: 3.6.0
   pullPolicy: IfNotPresent
 service:
-  name: nginx
+  name: mongo
   type: ClusterIP
-  externalPort: 80
-  internalPort: 80
+  externalPort: 27017
+  internalPort: 27017
 ingress:
   enabled: false
   # Used to create an Ingress record.
