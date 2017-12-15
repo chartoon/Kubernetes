@@ -10,4 +10,9 @@ image:
 persistnce:
   enabled: true
   accessMode: ReadWriteOnce
-  size: 8G
+  size: 8Gi
+
+mongodbRootPassword: WhyNotChangeMe?
+mongodbUsername: whoami
+mongodbPassword: WhyShouldIChangeYou?
+mongodbDatabase: whoami
