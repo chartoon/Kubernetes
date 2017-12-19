@@ -4,8 +4,8 @@ validate:
 install: validate
 	kubectl create -f ./prometheus-deployment.yaml --namespace monitoring
 service:
-	kubectl create -f ./prometheus-service.yaml
+	kubectl create -f ./prometheus-service.yaml --namespace monitoring
 status:
-	kubectl get configmap
-	kubectl get deployment
-	kubectl get service 
+	kubectl get configmap --namespace monitoring
+	kubectl get deployment --namespace monitoring
+	kubectl get service --namespace monitoring 
