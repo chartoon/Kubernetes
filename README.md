@@ -1,6 +1,6 @@
 # Kubernetes
+January 24, 2017
 
-December 06, 2017
-
-Use of Secret and ConfigMap to pass environment variables to postgresql pod.
-All YAML files are in Kubernetes/postgres/ConfigMap directory.
+1. Start a Prometheus instance in dataplatform namespace.
+2. Deploy a Hello World docker image based on https://github.com/infrastructure-as-code/docker-hello-world in dataplatform namespace.
+3. Monitor 2 via 1.
