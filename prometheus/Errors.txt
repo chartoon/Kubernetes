@@ -14,3 +14,15 @@ cm@Charuhas-Mehendale:~/kubernetes/MediaMath/Kubernetes/prometheus$ KubectlMM lo
 Error parsing commandline arguments: unknown long flag '--storage.local.path'
 prometheus: error: unknown long flag '--storage.local.path'
 
+###### With -config.file and -storage.local.path instead of --config.file and --storage.local.path
+cm@Charuhas-Mehendale:~/kubernetes/MediaMath/Kubernetes/prometheus$ KubectlMM log prometheus-deployment-7b86d8fc89-7cpbq
+Error parsing commandline arguments: unknown short flag '-c'
+prometheus: error: unknown short flag '-c'
+
+cm@Charuhas-Mehendale:~/kubernetes/MediaMath/Kubernetes/prometheus$ KubectlMM get pods
+NAME                                     READY     STATUS             RESTARTS   AGE
+prometheus-deployment-6db7f55784-rb65n   0/1       CrashLoopBackOff   1          12s
+cm@Charuhas-Mehendale:~/kubernetes/MediaMath/Kubernetes/prometheus$ KubectlMM log prometheus-deployment-6db7f55784-rb65n
+Error parsing commandline arguments: unknown short flag '-s'
+prometheus: error: unknown short flag '-s'
+

@@ -14,7 +14,7 @@ spec:
           image: prom/prometheus:latest
           args:
             - "--config.file=/etc/prometheus/prometheus.yml"
-            - "--storage.local.path=/prometheus/"
+            - "-storage.local.path=/prometheus/"
           ports:
             - containerPort: 9090
           volumeMounts:
@@ -27,6 +27,6 @@ spec:
           configMap:
             defaultMode: 420
             name: prometheus-server-conf
-  
+
         - name: prometheus-storage-volume
-          emptyDir: {} 
+          emptyDir: {}
