@@ -1,0 +1,16 @@
+cm@Charuhas-Mehendale:~/kubernetes/MediaMath/Kubernetes/prometheus$ KubectlMM create -f prometheus-deployment.yaml 
+deployment "prometheus-deployment" created
+cm@Charuhas-Mehendale:~/kubernetes/MediaMath/Kubernetes/prometheus$ KubectlMM get deployment
+NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+prometheus-deployment   1         1         1            0           13s
+cm@Charuhas-Mehendale:~/kubernetes/MediaMath/Kubernetes/prometheus$ KubectlMM get pod
+NAME                                     READY     STATUS             RESTARTS   AGE
+prometheus-deployment-5b85ffb86f-vz4qm   0/1       CrashLoopBackOff   1          20s
+
+cm@Charuhas-Mehendale:~/kubernetes/MediaMath/Kubernetes/prometheus$ KubectlMM get pods
+NAME                                     READY     STATUS             RESTARTS   AGE
+prometheus-deployment-5b85ffb86f-vz4qm   0/1       CrashLoopBackOff   4          2m
+cm@Charuhas-Mehendale:~/kubernetes/MediaMath/Kubernetes/prometheus$ KubectlMM log prometheus-deployment-5b85ffb86f-vz4qm
+Error parsing commandline arguments: unknown long flag '--storage.local.path'
+prometheus: error: unknown long flag '--storage.local.path'
+
